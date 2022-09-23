@@ -1,4 +1,5 @@
 import 'package:dsa/data_structures/array.dart';
+import 'package:dsa/data_structures/linked_list.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -27,6 +28,20 @@ void main() {
         array.data,
         [null, null, null, null, null, null, null, null, null, null],
       );
+    });
+
+    test('Linked List Tests', () {
+      final linkedList = LinkedList<int>();
+
+      for (final item in items) {
+        linkedList.insert(item);
+      }
+
+      linkedList.printLinkedList();
+
+      expect(linkedList.search(2), 2);
+      linkedList.delete(2);
+      expect(linkedList.search(2), null);
     });
   });
 }
